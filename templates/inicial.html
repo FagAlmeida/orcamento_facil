@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orçamento - Sam Esquadrias</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .orcamento-container {
+      max-width: 100%;
+      margin: 10px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header-logo img {
+      height: 60px;
+      width: auto;
+      margin-bottom: 15px;
+    }
+
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .header-logo div h3 {
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .header-logo div small {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .header-logo p {
+      font-size: 12px;
+      margin: 5px 0 0 0;
+    }
+
+    .table {
+      font-size: 12px;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .table input {
+      width: 100%;
+      border: none;
+      padding: 2px 5px;
+      box-sizing: border-box;
+    }
+
+    .table td input[name="descricao"] {
+      white-space: normal;
+      word-wrap: break-word;
+      min-width: 300px;
+    }
+
+    .table td {
+      vertical-align: top;
+    }
+
+    .table input:focus {
+      outline: none;
+      background-color: #e9ecef;
+    }
+
+    .mb-3 label {
+      font-size: 12px;
+    }
+
+    .text-end h5 {
+      font-size: 16px;
+    }
+
+    .btn-lg {
+      font-size: 14px;
+      padding: 8px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="orcamento-container" id="orcamento">
+
+  <!-- Cabeçalho -->
+  <div class="header-logo">
+    <div class="d-flex align-items-center">
+      <img src="static\img\logo-sam.jpg" alt="Logo SAM">
+      <div>
+        <h3>ESQUADRIAS</h3>
+        <small>Serviços e Manutenção em Alumínio</small>
+      </div>
+    </div>
+    <div>
+      <p>Data: <input type="date" name="data" value=""></p>
+    </div>
+  </div>
+
+  <!-- Dados do cliente -->
+  <h5>Dados do Cliente</h5>
+  <div class="row mb-3">
+    <div class="col-12 mb-2">
+      <label>Cliente</label>
+      <input type="text" class="form-control" name="cliente">
+    </div>
+    <div class="col-12 mb-2">
+      <label>Endereço</label>
+      <input type="text" class="form-control" name="endereco">
+    </div>
+    <div class="col-6 mb-2">
+      <label>Cidade</label>
+      <input type="text" class="form-control" name="cidade">
+    </div>
+    <div class="col-6 mb-2">
+      <label>Telefone</label>
+      <input type="text" class="form-control" name="telefone">
+    </div>
+    <div class="col-6 mb-2"style="width: 100%;">
+      <label>Condições de Pagamento</label>
+      <input type="text" class="form-control" name="condicoes" placeholder="Ex: Sinal 50% e saldo 50%">
+    </div>
+  </div>
+
+  <!-- Tabela de serviços -->
+  <h5>Descrição dos Serviços</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Qtd</th>
+        <th>Descrição</th>
+        <th>Valor Unitário</th>
+        <th>Valor Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="number" name="quantidade" value=""></td>
+        <td><input type="text" name="descricao" value=""></td>
+        <td><input type="text" name="valor_unitario" value=""></td>
+        <td><input type="text" name="valor_total" value=""></td>
+      </tr>
+      <tr>
+        <td><input type="number" name="quantidade" value=""></td>
+        <td><input type="text" name="descricao" value=""></td>
+        <td><input type="text" name="valor_unitario" value=""></td>
+        <td><input type="text" name="valor_total" value=""></td>
+      </tr>
+      <tr>
+        <td><input type="number" name="quantidade" value=""></td>
+        <td><input type="text" name="descricao" value=""></td>
+        <td><input type="text" name="valor_unitario" value=""></td>
+        <td><input type="text" name="valor_total" value=""></td>
+      </tr>
+      <tr>
+        <td><input type="number" name="quantidade" value=""></td>
+        <td><input type="text" name="descricao" value=""></td>
+        <td><input type="text" name="valor_unitario" value=""></td>
+        <td><input type="text" name="valor_total" value=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Observações -->
+  <div class="mb-3">
+    <label>Observações</label>
+    <textarea class="form-control" name="obs" rows="3"></textarea>
+  </div>
+
+  <!-- Valor final -->
+  <div class="text-end mb-3">
+    <h5>Valor Total: <input type="text" name="valor_final" value=""></h5>
+  </div>
+
+  <!-- Botão -->
+  <div class="text-center">
+    <button class="btn btn-success btn-lg" id="gerarImagem">Gerar Imagem do Orçamento</button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  const table = document.querySelector('table tbody');
+  const valorFinalInput = document.querySelector('[name="valor_final"]');
+
+ table.addEventListener('input', () => {
+    let totalGeral = 0;
+    table.querySelectorAll('tr').forEach(row => {
+      const qtd = parseFloat(row.querySelector('[name="quantidade"]').value) || 0;
+      const unitInput = row.querySelector('[name="valor_unitario"]');
+      const unit = parseFloat(unitInput.value.replace(',', '.')) || 0;
+      const total = qtd * unit;
+      const totalInput = row.querySelector('[name="valor_total"]');
+      if (!totalInput.dataset.manual) {
+        totalInput.value = total.toLocaleString('pt-BR', {minimumFractionDigits:2});
+      }
+      totalGeral += total;
+    });
+    if (!valorFinalInput.dataset.manual) {
+      valorFinalInput.value = totalGeral.toLocaleString('pt-BR', {minimumFractionDigits:2});
+    }
+  });
+
+  // Permite digitar manualmente valor total por linha
+  table.querySelectorAll('[name="valor_total"]').forEach(input => {
+    input.addEventListener('input', () => input.dataset.manual = 'true');
+  });
+
+  // Permite digitar manualmente valor final
+  valorFinalInput.addEventListener('input', () => valorFinalInput.dataset.manual = 'true');
+
+  // Gerar imagem
+  document.getElementById('gerarImagem').addEventListener('click', () => {
+    const orcamento = document.getElementById('orcamento');
+    html2canvas(orcamento).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = imgData;
+      link.download = 'orcamento.png';
+      link.click();
+      window.open(imgData, '_blank');
+    });
+  });
+</script>
+
+</body>
+</html>
