@@ -148,7 +148,7 @@
     </div>
     <div class="col-6 mb-2"style="width: 100%;">
       <label>Condições de Pagamento</label>
-      <input type="text" class="form-control" name="condicoes" placeholder="Ex: Sinal 50% e saldo 50%">
+      <input type="text" class="form-control" name="condicoes" placeholder="">
     </div>
   </div>
 
@@ -174,32 +174,33 @@
         <td><input type="number" name="quantidade" value=""></td>
         <td><input type="text" name="descricao" value=""></td>
       </tr>
-      <tr>
-        <td><input type="number" name="quantidade" value=""></td>
-        <td><input type="text" name="descricao" value=""></td>
-      </tr>
-      <tr>
-        <td><input type="number" name="quantidade" value=""></td>
-        <td><input type="text" name="descricao" value=""></td>
-      </tr>
     </tbody>
   </table>
 
   <!-- Observações -->
   <div class="mb-3">
     <label>Observações</label>
-    <textarea class="form-control" name="obs" rows="3"></textarea>
+    <textarea class="form-control" name="obs" rows="2"></textarea>
   </div>
 
   <!-- Valor final -->
   <div class="text-end mb-3">
     <h5>Valor Total: <input type="text" name="valor_final" value=""></h5>
   </div>
+ <br><br>
+
+  <div><small>Assinatura: _____________________________________.</small></div>
+
+   <br><br>
+
 
   <!-- Botão -->
   <div class="text-center">
     <button class="btn btn-success btn-lg" id="gerarImagem">Orçamento</button>
   </div>
+
+
+  
 
 </div>
 
