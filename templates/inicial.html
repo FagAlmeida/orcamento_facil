@@ -16,7 +16,7 @@
       max-width: 100%;
       margin: 10px;
       background: #fff;
-      padding: 15px;
+      padding: 10px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
@@ -50,6 +50,11 @@
       margin: 5px 0 0 0;
     }
 
+    .table-bordered td,
+    .table-bordered th {
+      border: 1px solid #978f8f; /* cor preta */
+    }
+
     .table {
       font-size: 12px;
       overflow-x: auto;
@@ -61,12 +66,14 @@
       border: none;
       padding: 2px 5px;
       box-sizing: border-box;
+      
     }
 
     .table td input[name="descricao"] {
       white-space: normal;
       word-wrap: break-word;
       min-width: 300px;
+      
     }
 
     .table td {
@@ -97,13 +104,14 @@
       margin-top: 5px;   /* espaço acima */
     }
 
+
   </style>
 </head>
 <body>
 
 <div class="orcamento-container" id="orcamento">
 
-<div class="info-extra">CNPJ: 00.000.000/0001-00 @sam_esquadrias.vidros</div>
+<div class="info-extra">CNPJ: 21.824.661/0001-01 @sam_esquadrias.vidros</div>
   <!-- Cabeçalho -->
   <div class="header-logo">
     <div class="d-flex align-items-center">
